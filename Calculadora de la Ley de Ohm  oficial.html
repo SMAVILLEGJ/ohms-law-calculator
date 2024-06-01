@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://output.jsbin.com/buvahiyeri -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2024 by anonymous (http://jsbin.com/buvahiyeri/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de la Ley de Ohm</title>
+    <link rel="stylesheet" href="./Calculadora de la Ley de Ohm  oficial_files/style.css">
+
+<style id="jsbin-css">
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #3b5998;
+    margin: 0;
+}
+
+.calculadora {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 280px;
+}
+
+label, input, select, button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+input, select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+#resultado {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+    <div class="calculadora">
+        <h2>Calculadora de la Ley de Ohm</h2>
+        <div>
+            <label for="corriente">Corriente (I):</label>
+            <input type="number" id="corriente" placeholder="Introduce la corriente">
+            <select id="corriente-unidad">
+                <option value="A">A</option>
+                <option value="mA">mA</option>
+            </select>
+        </div>
+        <div>
+            <label for="voltaje">Voltaje (V):</label>
+            <input type="number" id="voltaje" placeholder="Introduce el voltaje">
+        </div>
+        <div>
+            <label for="resistencia">Resistencia (R):</label>
+            <input type="number" id="resistencia" placeholder="Introduce la resistencia">
+        </div>
+        <button onclick="calcular()">Calcular</button>
+        <div id="resultado"></div>
+    </div>
+    <script type="text/javascript" async="" src="./Calculadora de la Ley de Ohm  oficial_files/js"></script><script type="text/javascript" async="" src="./Calculadora de la Ley de Ohm  oficial_files/linkid.js.descarga"></script><script async="" src="./Calculadora de la Ley de Ohm  oficial_files/analytics.js.descarga"></script><script src="./Calculadora de la Ley de Ohm  oficial_files/script.js.descarga"></script>
+<script>
+function calcular() {
+    let corriente = parseFloat(document.getElementById('corriente').value);
+    const voltaje = parseFloat(document.getElementById('voltaje').value);
+    const resistencia = parseFloat(document.getElementById('resistencia').value);
+    const corrienteUnidad = document.getElementById('corriente-unidad').value;
+
+    // Convertir miliamperios a amperios si es necesario
+    if (corrienteUnidad === 'mA') {
+        corriente /= 1000;
+    }
+
+    let resultado = '';
+
+    if (!isNaN(corriente) && isNaN(voltaje) && !isNaN(resistencia)) {
+        // Calcular el voltaje
+        const voltaje = corriente * resistencia;
+        resultado = Voltaje (V): ${voltaje.toFixed(1)} V;
+    } else if (isNaN(corriente) && !isNaN(voltaje) && !isNaN(resistencia)) {
+        // Calcular la corriente
+        const corriente = voltaje / resistencia;
+        resultado = Corriente (I): ${corriente.toFixed(1)} A;
+    } else if (!isNaN(corriente) && !isNaN(voltaje) && isNaN(resistencia)) {
+        // Calcular la resistencia
+        const resistencia = voltaje / corriente;
+        resultado = Resistencia (R): ${resistencia.toFixed(1)} Ω;
+    } else {
+        resultado = 'Por favor, introduce dos valores para calcular el tercero.';
+    }
+
+    document.getElementById('resultado').innerText = resultado;
+}
+</script>
+<script src="./Calculadora de la Ley de Ohm  oficial_files/edit.js.descarga"></script>
+<script>jsbinShowEdit && jsbinShowEdit({"static":"https://static.jsbin.com","root":"https://jsbin.com"});</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-1656750-34', 'auto');
+ga('require', 'linkid', 'linkid.js');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+
+</script><iframe allow="join-ad-interest-group" data-tagging-id="G-NQJ8QBF8ET" data-load-time="1717218284624" height="0" width="0" src="./Calculadora de la Ley de Ohm  oficial_files/rul.html" style="display: none; visibility: hidden;"></iframe>
+
+
+</body><a id="edit-with-js-bin" href="https://jsbin.com/buvahiyeri/edit" style="top: 0px;">Edit in JS Bin <img src="./Calculadora de la Ley de Ohm  oficial_files/favicon.png" width="16" height="16"></a><link rel="stylesheet" href="./Calculadora de la Ley de Ohm  oficial_files/edit.css"></html>
